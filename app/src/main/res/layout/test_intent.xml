@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="而 Genymotion"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="action_send without category" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="action_send category" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="action_edit without category" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="action_edit with category" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="open weibo" />
+
+    
+      <Button
+        android:id="@+id/btn6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="uninstall package" />
+      
+     <Button
+        android:id="@+id/btn7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="open with data" />
+    
+      <Button
+        android:id="@+id/btn8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="open by action " />
+      
+       <Button
+        android:id="@+id/btn9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="调用录音 " />
+       
+       
+       <Button
+        android:id="@+id/btn10"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="打开权限设置页面 " />
+
+
+    <Button
+        android:id="@+id/btn11"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="打开跳转ErrorA " />
+     
+</LinearLayout>

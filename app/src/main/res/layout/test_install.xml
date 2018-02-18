@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="软件安装下载测试"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="打开福建省二期应用" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="卸载福建省防汛通一期" />
+
+      <Button
+        android:id="@+id/btn3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="打开录音" />
+      
+        <Button
+        android:id="@+id/btn4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="跳转到权限设置" />
+      
+
+    <com.strongsoft.ui.widget.TimeCountButton
+        android:id="@+id/btn_timecount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="倒计时按钮" />
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/flloadingui"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:visibility="gone" >
+	<LinearLayout
+		android:id="@+id/llloading"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:background="@drawable/loading_bg"
+		android:orientation="vertical"
+		android:padding="10dp"
+		android:visibility="gone" >
+		<TextView
+			android:id="@+id/tvMessage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/dataloading"
+			android:textColor="#ffffff"
+			android:textSize="16sp" />
+		<ProgressBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:background="@color/transparent" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/llloadfinish"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical"
+		android:visibility="gone" >
+		<TextView
+			android:id="@+id/tvResult"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp"
+			android:text="无网络数据"
+			android:textColor="#000000"
+			android:textSize="16sp" />
+		<Button
+			android:id="@+id/btnRefresh"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:paddingBottom="10dp"
+			android:paddingLeft="20dp"
+			android:paddingRight="20dp"
+			android:paddingTop="10dp"
+			android:text="刷新"
+			android:textColor="#7D8B8F"
+			android:textSize="20sp" />
+	</LinearLayout>
+</FrameLayout>

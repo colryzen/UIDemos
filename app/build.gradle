@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.strongsoft.ui"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+                cruncherEnabled = false
+                useNewCruncher = false
+          }
+
+    productFlavors {
+       jenkins{
+           applicationId "com.strongsoft.ui"
+           def appname="UI-test"
+           def filesAuthorityValue = applicationId + ".fileprovider"
+           //manifest 占位符
+           manifestPlaceholders = [
+                   APP_ID          : applicationId,
+                   APP_NAME        : appname,
+                   filesAuthority  : filesAuthorityValue,
+                   UMENG_APPKEY    : "590bcd0b45297d20df002909",
+                   AMAP_KEY        : "f4c641973a2f8634e75d5782d25e3f98",
+                   APP_SCHEME      : "istrong.hzy"
+           ]
+           //设置变量
+           buildConfigField("String", "APP_ID", "\"${applicationId}\"")
+           buildConfigField("String", "APP_NAME", "\"${appname}\"")
+           buildConfigField("String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\"")
+           buildConfigField("String", "PRODEUCT_ID", "\"cp2017009\"");
+           buildConfigField("String", "APP_SCHEME", "\"istrong.hzy\"");
+       }
+    }
+
+}
+
+dependencies {
+  //  compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+///////////////////////////////////////
+// 上传arr
+
+def MAVEN_LOCAL_PATH = 'http://192.168.200.92:8081/nexus/content/repositories/zyx/'
+def ARTIFACT_ID = 'ext-map-baidu'
+def VERSION_NAME = '1.0.0'
+def GROUP_ID = 'com.anjubao.code'
+def ACCOUNT = 'admin'
+def PASSWORD = 'admin123'
+
+//脚本：将Lib打成aar包上传至maven私有库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url:MAVEN_LOCAL_PATH ){
+                authentication(userName: ACCOUNT, password: PASSWORD)}
+            pom.project {
+                groupId GROUP_ID
+                artifactId ARTIFACT_ID
+                version VERSION_NAME
+                packaging 'aar'
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 这个布局决定了标签在上面还是在下面显示 -->
+
+    <FrameLayout
+        android:id="@+id/realtabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+id/rg_switcherLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bg"
+            android:checkedButton="@+id/rb_message"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_message"
+                style="@style/SwitchBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/switchbar_message_selector"
+                android:text="@string/switchbar_message" />
+
+            <RadioButton
+                android:id="@+id/rb_contact"
+                style="@style/SwitchBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/switchbar_contacts_selector"
+                android:text="@string/switchbar_contact" />
+
+            <RadioButton
+                android:id="@+id/rb_me"
+                style="@style/SwitchBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/switchbar_me_selector"
+                android:text="@string/switchbar_me" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</LinearLayout>

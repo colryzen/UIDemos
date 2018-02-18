@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.strongsoft.ui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/pinnedheader_listview_ic_launcher"
+        android:label="${APP_NAME}"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.strongsoft.ui.ApiDemos" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testpptplay.PlayActivity"
+            android:label="播放示例/无动画" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testpptplay.animation.AnimationActivity"
+            android:label="播放示例/ImageViewSwitch" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testpptplay.animation.AnimationMoreAct"
+            android:label="播放示例/同时播放视频图片" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testpptplay.animation.mtESTa"
+            android:label="播放示例/Textv" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testpptplay.animation.TestOpenGL"
+            android:label="播放示例/Opengl绘制文字" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.error.ErrorTest"
+            android:label="Activity错误/对话框错误" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.example.media.VideoPlayTestActivity"
+            android:label="media/VideoPlayTest" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+          <activity
+            android:name="com.example.intent.IntentTestAct"
+            android:label="IntertFilter测试/TestAct" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.error.ActA"
+            android:label="Intent测试/A" >
+            <intent-filter>
+                <action android:name="com.strongsoft.action.send" />
+                <action android:name="com.strongsoft.action.edit" />
+                <action android:name="com.strongsoft.action.share" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.error.ActB"
+            android:label="Intent测试/B" >
+            <intent-filter>
+                <action android:name="com.strongsoft.action.send" />
+                <action android:name="com.strongsoft.action.edit" />
+                <action android:name="com.strongsoft.action.share" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        
+          <activity
+            android:name="com.example.error.ActC"
+            android:label="Intent测试/c" >
+            <intent-filter>
+                <action android:name="com.strongsoft.action.send" />
+                <action android:name="com.strongsoft.action.edit" />
+                <category android:name="com.strongsoft.category.main" />
+            </intent-filter>
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                  <data
+                      android:host="strongsoft.ui.widget"
+                      android:scheme="content" />
+              </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.example.error.ActD"
+            android:label="Intent测试/d" >
+            <intent-filter>
+                <action android:name="com.strongsoft.action.edit" />
+                <category android:name="com.strongsoft.category.main" />
+                <category android:name="com.strongsoft.category.new" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          
+           <activity
+            android:name="com.example.screen.ScreenTestAct"
+            android:label="屏幕参数" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        
+           
+            <activity
+            android:name="com.example.graphics.Regions"
+            android:label="行政区划绘制" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+          <activity
+            android:name="com.example.openother.OpenOtherAct"
+            android:label="自定义控件/CheckBoxList" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+         <activity
+           android:name="com.example.install.InstallActivity"
+            android:label="安装卸载测试" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+          <activity
+           android:name="com.example.view.listview.DummyHeaderListviewActivity"
+            android:label="ListView/DummyHeaderListview(带头部的listview)" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        
+       
+
+         <activity
+           android:name="com.strongsoft.webview.inputfile.WebViewActivity"
+            android:label="webView/上传文件" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+          
+        <activity
+           android:name="com.strongsoft.webview.uploadfile.WebViewUploadActivity"
+            android:label="webView/上传文件使用 android 4.3.1 源码" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.strongsoft.webview.common.WebActivity"
+            android:label="webView/台风专用，添加Useragent"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+
+        
+        
+         <activity
+           android:name="com.example.tabs.FragmentTabs"
+            android:label="Tabs/自定义Radionbutton Fragment" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.example.intent.IntentUrlSchemeAct"
+            android:label="Intent测试/调用URLScheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
