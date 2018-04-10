@@ -6,19 +6,18 @@
     <string name="action_settings">Settings</string>
 
     <string name="search_hint">搜索</string>
-	<string name="empty_list_msg">无相关数据</string>   
-     <string name="test_msg">测试走马灯广</string>
-     <string name="nodata">暂无数据</string>
-     
-     
-     <!-- 浏览器 -->
-     <string name="choose_upload">选择上传文件</string>
-     <string name="uploads_disabled">无法上传</string>
-     
-  
-     
+    <string name="empty_list_msg">无相关数据</string>
+    <string name="test_msg">测试走马灯广</string>
+    <string name="nodata">暂无数据</string>
+
+
+    <!-- 浏览器 -->
+    <string name="choose_upload">选择上传文件</string>
+    <string name="uploads_disabled">无法上传</string>
+
+
     <string name="switchbar_me">我</string>
     <string name="switchbar_contact">通讯录</string>
     <string name="switchbar_message">消息</string>
-     <string name="dataloading">数据加载中...</string>
+    <string name="dataloading">数据加载中...</string>
 </resources>

@@ -55,6 +55,7 @@ public class WebActivity extends FragmentActivity implements
 		   url="http://sc.istrongcloud.com:8007/release/index.html";
 		   url="http://hnfz.hainan.gov.cn/WeiXin/rainbow-weather-mq.html";
 		   url="http://www.baidu.com";
+		   url="file:///android_asset/webview_test_index.html";
 	   }
 
 	   if(TextUtils.isEmpty(title)){

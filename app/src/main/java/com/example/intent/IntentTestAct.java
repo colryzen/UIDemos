@@ -13,6 +13,8 @@ import com.example.error.ActA;
 import com.example.util.AndroidUtil;
 import com.strongsoft.ui.R;
 
+import java.net.URI;
+
 public class IntentTestAct extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,8 @@ public class IntentTestAct extends Activity {
                 it = new Intent();
                 it.setAction("com.strongsoft.action.edit");
                 it.addCategory("com.strongsoft.category.main");
+                it.addCategory("com.strongsoft.category.new");
+                it.setData(Uri.parse("istrong://strongsoft.ui.widget/test"));
                 startActivity(it.createChooser(it, "请选择"));
                 // ActD
                 break;

@@ -19,7 +19,12 @@ public class IntentUrlSchemeAct extends Activity {
 //         final String uriStr="istrong.fxy://istrong.com/login?username=15659134597&password=12345678&orgId=jg2017001&appId=cp2017004";
 //         final String uriStr="istrong.nbyxt://com.istrong.nbyxt.sea/bdchat?model_name=北斗消息";
 
-        final String uriStr="istrong.nbyxt://com.istrong.nbyxt.sea/publish?model_name=北斗发供应信息";
+     //   final String uriStr="istrong.nbyxt://com.istrong.nbyxt.sea/publish?model_name=北斗发供应信息";
+
+
+
+        final String uriStr="istrong.jsy://jsy.istrong.com/login";
+
 
     	setContentView(R.layout.activity_error_a_test);
         TextView tv=(TextView)findViewById(R.id.tv);
