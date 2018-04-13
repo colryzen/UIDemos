@@ -62,6 +62,7 @@ public class IntentTestAct extends Activity {
                 // action_edit category
                 String packageName = "com.sina.weibo";
                 packageName = "net.strongsoft.shzh";
+                packageName="com.hikvi.ivms8700";
                 // packageName="com.baidu.BaiduMap";
                 PackageManager mager = getPackageManager();
                 Intent intent = mager.getLaunchIntentForPackage(packageName);

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+function startAPP(){
+window.location = "istrong.jsy://jsy.istrong.com/login";
+}
+function downloadAPP(){
+window.location = "apk下载地址";
+}
+
+</script>
+</head>
+<body>
+<h1>这是一个 WebView</h1>
+
+<a href="market://details?id=com.tencent.mm">open app with market</a>
+<br/>
+<br/>
+
+<a href="istrong.jsy://jsy.istrong.com/login">open app with Uri Scheme path</a>
+ <br/>
+<a href="istrong.jsy://jsy.istrong.com/login?username=11111">open app with Uri Scheme and path params </a>
+<br/>
+
+<button type="button" onclick="startAPP()"> 打开及时云 app </button>
+
+<br/>
+
+
+</body>
+</html>
