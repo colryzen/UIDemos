@@ -19,7 +19,7 @@ public class ErrorTest extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.sample_net_work_error_view);
 		
 		new GoIntent(ErrorTest.this).execute();
 	}

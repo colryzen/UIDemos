@@ -2,6 +2,7 @@ package com.example.view;
 
 import android.content.Context;
 import android.graphics.Rect;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ import android.widget.TextView;
  * 
  * @author zuolongsnail
  */
-public class CustomMarqueeTextView extends TextView {
+public class CustomMarqueeTextView extends AppCompatTextView {
 
   
 	public CustomMarqueeTextView(Context context) {

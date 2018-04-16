@@ -5,9 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.net.http.SslError;
-import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -22,6 +21,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.example.error.ActA;
+import com.example.util.AndroidUtil;
+import com.example.view.WebStatusView;
 import com.strongsoft.ui.R;
 import com.strongsoft.webview.common.ExtraConfig;
 
@@ -33,6 +35,7 @@ public class WebActivity extends FragmentActivity implements
 	private String url = "";
 	private WebView webView;
 	private SwipeRefreshLayout refreshLayout;
+	private WebStatusView mWebStatusView;
 	// 是否可以下拉刷新
 	private boolean mRefreshable = true;
 
@@ -60,6 +63,9 @@ public class WebActivity extends FragmentActivity implements
        if(TextUtils.isEmpty(url)){
 		   url="file:///android_asset/webview_test_index.html";
 		   url="http://192.168.31.150:8080/webtest/webview_test_index.html";
+		   url="http://192.168.31.150:8080/jsy_password_reset/index.html";
+		   url="http://120.27.49.192:3032/resetpwd/#/";
+		  // url="http://www.baidu.com/";
 	   }
 
 	   if(TextUtils.isEmpty(title)){
@@ -116,9 +122,17 @@ public class WebActivity extends FragmentActivity implements
 		this.webView.setWebViewClient(new webViewClient());
 		this.webView.setWebChromeClient(mWebChromeClient);
 		webView.clearCache(false);
+
+        //初始化状态
+		initWebStatusView();
 		//url 地址
 		if(!TextUtils.isEmpty(url)){
-			webView.loadUrl(url);
+			if(!AndroidUtil.hasNetEnviroment(getApplicationContext())){
+				mWebStatusView.setVisibility(View.VISIBLE);
+			}else{
+				mWebStatusView.setVisibility(View.GONE);
+				webView.loadUrl(url);
+			}
 		}
 
 	}
@@ -142,10 +156,13 @@ public class WebActivity extends FragmentActivity implements
 				return false;
 			}
 			if (url.startsWith(SCHEME_STRONG_JSY)) {
-					Intent intent = new Intent(Intent.ACTION_VIEW,
-							Uri.parse(url));
-					startActivity(intent);
-					return true;
+//					Intent intent = new Intent(Intent.ACTION_VIEW,
+//							Uri.parse(url));
+//					startActivity(intent);
+
+				   Intent intent=new Intent(WebActivity.this,ActA.class);
+				   startActivity(intent);
+				   return true;
 				}
 
            return super.shouldOverrideUrlLoading(view,url);
@@ -157,6 +174,7 @@ public class WebActivity extends FragmentActivity implements
 			super.onPageStarted(view, url, favicon);
 			Toast.makeText(WebActivity.this,"ua="+view.getSettings().getUserAgentString(),Toast.LENGTH_SHORT).show();
 			refreshLayout.setRefreshing(true);
+			mWebStatusView.setVisibility(View.GONE);
 		}
 
 		@Override
@@ -164,6 +182,9 @@ public class WebActivity extends FragmentActivity implements
 			// TODO Auto-generated method stub
 			super.onPageFinished(view, url);
 			refreshLayout.setRefreshing(false);
+			if(!AndroidUtil.hasNetEnviroment(getApplicationContext())){
+				mWebStatusView.setVisibility(View.VISIBLE);
+			}
 		}
 		
 		 public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
@@ -172,7 +193,17 @@ public class WebActivity extends FragmentActivity implements
               handler.proceed();  // 接受所有网站的证书
               //handleMessage(Message msg); // 进行其他处理
 			 }
-		
+
+		@Override
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+			try {
+				view.stopLoading();
+			} catch (Exception e) {
+				Log.e(TAG, e.toString());
+			}
+
+			 mWebStatusView.setVisibility(View.VISIBLE);
+		}
 	}
 
 	WebChromeClient mWebChromeClient = new WebChromeClient() {
@@ -244,6 +275,18 @@ public class WebActivity extends FragmentActivity implements
 
 	public void initData() {
 		setTitle(title);
+	}
+
+	private void initWebStatusView(){
+		mWebStatusView=(WebStatusView)this.findViewById(R.id.v_webStatus);
+		mWebStatusView.setImageViewOnClikListener(new WebStatusView.ImageViewOnClikListener() {
+			@Override
+			public void onClick(View v) {
+				//刷新
+				onRefresh();
+				mWebStatusView.setVisibility(View.GONE);
+			}
+		});
 	}
 
 }

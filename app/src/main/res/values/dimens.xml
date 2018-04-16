@@ -9,4 +9,10 @@
     <dimen name="index_bar_view_width">20dp</dimen>
     <dimen name="index_bar_view_margin">10dp</dimen>
 
+    <!--网络错误等-->
+    <dimen name="img_bottom_text">25dp</dimen> <!-- 图片距离文字28dp-->
+    <dimen name="text_size">16dp</dimen>
+    <dimen name="text_top">55dp</dimen>
+    <dimen name="img_size">90dp</dimen>
+
 </resources>

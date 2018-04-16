@@ -1,11 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
         >
     <WebView
         android:id="@+id/wv_show"
@@ -13,4 +15,13 @@
         android:layout_height="match_parent"
         />
     </android.support.v4.widget.SwipeRefreshLayout>
+    <com.example.view.WebStatusView
+        android:id="@+id/v_webStatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:textColor="#33b5e5"
+        app:imageSize="90dp"
+        app:showDrawable="@drawable/network_error"
+        app:showTextString="Hello, NetWorkErrorView" />
 </RelativeLayout>
