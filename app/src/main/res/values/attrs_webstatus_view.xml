@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="WebStatusView">
+        <attr name="showTextString" format="string" />
+        <attr name="showDrawable" format="color|reference" />
+        <attr name="textColor" format="color" />
+        <attr name="imageSize" format="dimension" />
+    </declare-styleable>
+</resources>
