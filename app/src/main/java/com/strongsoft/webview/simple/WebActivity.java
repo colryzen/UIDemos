@@ -65,7 +65,7 @@ public class WebActivity extends FragmentActivity implements
 		   url="http://192.168.31.150:8080/webtest/webview_test_index.html";
 		   url="http://192.168.31.150:8080/jsy_password_reset/index.html";
 		   url="http://120.27.49.192:3032/resetpwd/#/";
-		   url="http://www.baidu.com/";
+		   // url="http://www.baidu.com/";
 	   }
 
 	   if(TextUtils.isEmpty(title)){
