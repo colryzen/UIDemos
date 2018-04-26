@@ -23,8 +23,10 @@ public class IntentUrlSchemeAct extends Activity {
 
 
 
-        final String uriStr="istrong.jsy://jsy.istrong.com/login";
+     //   final String uriStr="istrong.jsy://jsy.istrong.com/login";
 
+
+        final String  uriStr="istrong.nbyxt://com.istrong.nbyxt.sea/callPhone?phoneNumber=15659134597";
 
     	setContentView(R.layout.activity_error_a_test);
         TextView tv=(TextView)findViewById(R.id.tv);

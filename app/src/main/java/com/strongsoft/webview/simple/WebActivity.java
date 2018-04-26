@@ -14,6 +14,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -65,6 +66,7 @@ public class WebActivity extends FragmentActivity implements
 		   url="http://192.168.31.150:8080/webtest/webview_test_index.html";
 		   url="http://192.168.31.150:8080/jsy_password_reset/index.html";
 		   url="http://120.27.49.192:3032/resetpwd/#/";
+		   url="http://120.27.49.192:3032/settimeout/#/";
 		   // url="http://www.baidu.com/";
 	   }
 
@@ -287,6 +289,11 @@ public class WebActivity extends FragmentActivity implements
 				mWebStatusView.setVisibility(View.GONE);
 			}
 		});
+	}
+
+	@JavascriptInterface
+	public void setTimeOut(){
+		Log.d(TAG,"setTimeOut");
 	}
 
 }

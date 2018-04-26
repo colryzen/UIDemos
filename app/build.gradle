@@ -56,6 +56,39 @@ android {
            buildConfigField("String", "PRODEUCT_ID", "\"cp2017009\"");
            buildConfigField("String", "APP_SCHEME", "\"istrong.hzy\"");
        }
+
+        baidu{
+            applicationId "com.strongsoft.ui"
+            def appname="UI-test"
+            def filesAuthorityValue = applicationId + ".fileprovider"
+            //manifest 占位符
+            manifestPlaceholders = [
+                    APP_ID          : applicationId,
+                    APP_NAME        : appname,
+                    filesAuthority  : filesAuthorityValue,
+                    UMENG_APPKEY    : "590bcd0b45297d20df002909",
+                    AMAP_KEY        : "f4c641973a2f8634e75d5782d25e3f98",
+                    APP_SCHEME      : "istrong.hzy"
+            ]
+            //设置变量
+            buildConfigField("String", "APP_ID", "\"${applicationId}\"")
+            buildConfigField("String", "APP_NAME", "\"${appname}\"")
+            buildConfigField("String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\"")
+            buildConfigField("String", "PRODEUCT_ID", "\"cp2017009\"");
+            buildConfigField("String", "APP_SCHEME", "\"istrong.hzy\"");
+        }
+
+    }
+
+    applicationVariants.all { variant ->
+          println "变体名称:${variant.name}"
+        println "variant.outputs.size():${variant.outputs.size()}"
+           variant.outputs.each {
+               output ->
+               println " outputs 信息: ${output.outputFile}"
+                   println " variant.outputs[0] 信息: ${variant.outputs[0].outputFile}"
+           }
+
     }
 
 }
