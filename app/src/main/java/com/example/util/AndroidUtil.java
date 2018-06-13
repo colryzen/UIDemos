@@ -334,6 +334,20 @@ public class AndroidUtil {
 		}
 	}
 
+	/**
+	 * 取系统SDK版本号
+	 *
+	 * @return int
+	 */
+	public static String getSdkVersionName() {
+		try {
+			return Build.VERSION.RELEASE;
+		} catch (Exception e) {
+			return "Android";
+		}
+	}
+
+
 	public static boolean isEmulator() {
 		return Build.MODEL.equals("sdk") || Build.MODEL.equals("google_sdk");
 	}
