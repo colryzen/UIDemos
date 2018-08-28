@@ -20,4 +20,9 @@
     <string name="switchbar_contact">通讯录</string>
     <string name="switchbar_message">消息</string>
     <string name="dataloading">数据加载中...</string>
+
+
+    <string name="title_item_list">RxAndroid/Items</string>
+    <string name="title_item_detail">RxAndroid/Item Detail</string>
+    <string name="title_activity_rx_android">RxAndroid/RxAndroidActivity</string>
 </resources>

@@ -6,7 +6,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.strongsoft.ui"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -19,7 +19,7 @@ android {
 
         }
 
-        debug{
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
@@ -31,44 +31,44 @@ android {
     }
 
     aaptOptions {
-                cruncherEnabled = false
-                useNewCruncher = false
-          }
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
 
     productFlavors {
-       jenkins{
-           applicationId "com.strongsoft.ui"
-           def appname="UI-test"
-           def filesAuthorityValue = applicationId + ".fileprovider"
-           //manifest 占位符
-           manifestPlaceholders = [
-                   APP_ID          : applicationId,
-                   APP_NAME        : appname,
-                   filesAuthority  : filesAuthorityValue,
-                   UMENG_APPKEY    : "590bcd0b45297d20df002909",
-                   AMAP_KEY        : "f4c641973a2f8634e75d5782d25e3f98",
-                   APP_SCHEME      : "istrong.hzy"
-           ]
-           //设置变量
-           buildConfigField("String", "APP_ID", "\"${applicationId}\"")
-           buildConfigField("String", "APP_NAME", "\"${appname}\"")
-           buildConfigField("String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\"")
-           buildConfigField("String", "PRODEUCT_ID", "\"cp2017009\"");
-           buildConfigField("String", "APP_SCHEME", "\"istrong.hzy\"");
-       }
-
-        baidu{
+        jenkins {
             applicationId "com.strongsoft.ui"
-            def appname="UI-test"
+            def appname = "UI-test"
             def filesAuthorityValue = applicationId + ".fileprovider"
             //manifest 占位符
             manifestPlaceholders = [
-                    APP_ID          : applicationId,
-                    APP_NAME        : appname,
-                    filesAuthority  : filesAuthorityValue,
-                    UMENG_APPKEY    : "590bcd0b45297d20df002909",
-                    AMAP_KEY        : "f4c641973a2f8634e75d5782d25e3f98",
-                    APP_SCHEME      : "istrong.hzy"
+                    APP_ID        : applicationId,
+                    APP_NAME      : appname,
+                    filesAuthority: filesAuthorityValue,
+                    UMENG_APPKEY  : "590bcd0b45297d20df002909",
+                    AMAP_KEY      : "f4c641973a2f8634e75d5782d25e3f98",
+                    APP_SCHEME    : "istrong.hzy"
+            ]
+            //设置变量
+            buildConfigField("String", "APP_ID", "\"${applicationId}\"")
+            buildConfigField("String", "APP_NAME", "\"${appname}\"")
+            buildConfigField("String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\"")
+            buildConfigField("String", "PRODEUCT_ID", "\"cp2017009\"");
+            buildConfigField("String", "APP_SCHEME", "\"istrong.hzy\"");
+        }
+
+        baidu {
+            applicationId "com.strongsoft.ui"
+            def appname = "UI-test"
+            def filesAuthorityValue = applicationId + ".fileprovider"
+            //manifest 占位符
+            manifestPlaceholders = [
+                    APP_ID        : applicationId,
+                    APP_NAME      : appname,
+                    filesAuthority: filesAuthorityValue,
+                    UMENG_APPKEY  : "590bcd0b45297d20df002909",
+                    AMAP_KEY      : "f4c641973a2f8634e75d5782d25e3f98",
+                    APP_SCHEME    : "istrong.hzy"
             ]
             //设置变量
             buildConfigField("String", "APP_ID", "\"${applicationId}\"")
@@ -81,13 +81,13 @@ android {
     }
 
     applicationVariants.all { variant ->
-          println "变体名称:${variant.name}"
+        println "变体名称:${variant.name}"
         println "variant.outputs.size():${variant.outputs.size()}"
-           variant.outputs.each {
-               output ->
-               println " outputs 信息: ${output.outputFile}"
-                   println " variant.outputs[0] 信息: ${variant.outputs[0].outputFile}"
-           }
+        variant.outputs.each {
+            output ->
+                println " outputs 信息: ${output.outputFile}"
+                println " variant.outputs[0] 信息: ${variant.outputs[0].outputFile}"
+        }
 
     }
 
@@ -95,6 +95,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -104,7 +106,11 @@ dependencies {
 
     //glide
 //    implementation 'com.github.bumptech.glide:glide:4.6.1'
- //   annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    //   annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+
+    //RXJava RXAndroid
+    compile 'io.reactivex.rxjava2:rxjava:2.1.16'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 
 ///////////////////////////////////////
@@ -121,8 +127,9 @@ def PASSWORD = 'admin123'
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url:MAVEN_LOCAL_PATH ){
-                authentication(userName: ACCOUNT, password: PASSWORD)}
+            repository(url: MAVEN_LOCAL_PATH) {
+                authentication(userName: ACCOUNT, password: PASSWORD)
+            }
             pom.project {
                 groupId GROUP_ID
                 artifactId ARTIFACT_ID

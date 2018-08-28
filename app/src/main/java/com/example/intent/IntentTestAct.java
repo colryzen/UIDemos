@@ -53,7 +53,7 @@ public class IntentTestAct extends Activity {
                 it.setAction("com.strongsoft.action.edit");
                 it.addCategory("com.strongsoft.category.main");
                 it.addCategory("com.strongsoft.category.new");
-                it.setData(Uri.parse("istrong://strongsoft.ui.widget/test"));
+                it.setData(Uri.parse("www.istrong.nbyxt://strongsoft.ui.widget/test"));
                 startActivity(it.createChooser(it, "请选择"));
                 // ActD
                 break;

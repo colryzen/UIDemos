@@ -38,7 +38,8 @@ public class InstallActivity extends Activity {
 			// ActD
 			break;
 		case R.id.btn2:
-			String packageName2 = "net.strongsoft.fjfxb_newip";
+			String packageName2 = "cloud.app.yingyanggaishanyun";
+			packageName2="com.strongsoft.ui";
 			mager = InstallActivity.this.getPackageManager();
 			intent = mager.getLaunchIntentForPackage(packageName2);
 			if (intent != null) {

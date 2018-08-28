@@ -27,7 +27,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="卸载福建省防汛通一期" />
+        android:text="卸载营养改善云" />
 
       <Button
         android:id="@+id/btn3"
@@ -44,11 +44,5 @@
         android:text="跳转到权限设置" />
       
 
-    <com.strongsoft.ui.widget.TimeCountButton
-        android:id="@+id/btn_timecount"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="click"
-        android:text="倒计时按钮" />
 
 </LinearLayout>

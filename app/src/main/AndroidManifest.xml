@@ -22,19 +22,32 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/pinnedheader_listview_ic_launcher"
         android:label="${APP_NAME}"
         android:theme="@style/AppTheme">
         <activity android:name=".ApiDemos">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.launcher.LauncherActivity"
+            android:theme="@style/SplashTheme"
+            android:label="${APP_NAME}">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.example.testpptplay.PlayActivity"
             android:label="播放示例/无动画">
@@ -183,12 +196,13 @@
             <intent-filter>
                 <action android:name="com.strongsoft.action.send" />
                 <action android:name="com.strongsoft.action.edit" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.strongsoft.category.main" />
+
                 <data
                     android:host="strongsoft.ui.widget"
-                    android:scheme="istrong"
-                    />
+                    android:scheme="www.istrong.nbyxt" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -197,9 +211,8 @@
 
                 <data
                     android:host="strongsoft.ui.widget"
-                    android:scheme="content"
                     android:path="/test"
-                    />
+                    android:scheme="content" />
             </intent-filter>
         </activity>
         <activity
@@ -207,31 +220,34 @@
             android:label="Intent测试/d">
             <intent-filter>
                 <action android:name="com.strongsoft.action.edit" />
+
                 <category android:name="com.strongsoft.category.main" />
                 <category android:name="com.strongsoft.category.new" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="strongsoft.ui.widget"
-                    android:scheme="istrong"
-                    />
+                    android:scheme="istrong" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.example.error.ActE"
             android:label="Intent测试/E（网页跳转）">
+
             <!-- 需要添加下面的intent-filter配置 -->
             <!-- //istrong.jsy://jsy.istrong.com/login -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="jsy.istrong.com"
                     android:path="/login"
                     android:scheme="istrong.jsy" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.example.screen.ScreenTestAct"
             android:label="屏幕参数">
@@ -337,12 +353,11 @@
                     android:scheme="content" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.strongsoft.webview.simple.WebActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
-            android:label="webView/webview唤醒APP">
+            android:label="webView/webview唤醒APP"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -379,7 +394,43 @@
                     android:scheme="content" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.gif.GifPlayDemoActivity"></activity>
+        <activity android:name="com.example.gif.GifPlayDemoActivity" />
+        <activity
+            android:name="com.example.rxandroid.ItemListActivity"
+            android:label="@string/title_item_list" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.SAMPLE_CODE" />
+
+            <data
+                android:host="strongsoft.ui.widget"
+                android:scheme="content" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.rxandroid.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName="com.example.rxandroid.ItemListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rxandroid.ItemListActivity" />
+        </activity>
+        <activity
+            android:name="com.example.rxandroid.RxAndroidActivity"
+            android:label="@string/title_activity_rx_android">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+
+                <data
+                    android:host="strongsoft.ui.widget"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

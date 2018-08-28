@@ -25,4 +25,6 @@
     <color name="grayslate">#708090</color>
     <color name="lightblue">#0083FF</color>
     <color name="transparent">#00000000</color>
+
+    <color name="pure_white">#ffffffff</color>
 </resources>
