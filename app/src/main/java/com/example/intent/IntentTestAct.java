@@ -107,8 +107,11 @@ public class IntentTestAct extends Activity {
                 startActivity(intent);
                 break;
             case R.id.btn10:
-                intent = new Intent(this, ActA.class);
-                startActivity(intent);
+                String uriStr="cloud.app.yishanda://deliverytask/deliverytaskdeliverylist?userId=5914232b2f301e006b85e506&appId=cp2018005&orgId=jg2018066&orderReceiptUrl=https://m.kingboya.com/mall/index.html#/order/order-doc-upload/@orderId@&orderReceiptQueryUrl=https://m.kingboya.com/mall/index.html#/order/order-doc/@orderId@&deliverytype=0";
+                intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(uriStr));
+                startActivity(intent.createChooser(intent, "请选择"));
                 break;
             default:
                 break;

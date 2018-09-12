@@ -85,7 +85,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="click"
-        android:text="打开权限设置页面 " />
+        android:text="打开配送页面 " />
 
 
     <Button
